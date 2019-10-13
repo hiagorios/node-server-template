@@ -1,9 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 
 // Initializing the server
 const app = express();
+
+// Allow the server receiving data as JSON
+app.use(express.json());
+
+// Adding CORS Filter
+app.use(cors());
 
 // Initializing DB
 mongoose.connect(
